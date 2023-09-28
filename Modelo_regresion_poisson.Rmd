@@ -1,0 +1,72 @@
+---
+title: "Modelos de regresión poisson"
+author: "Carlos Crespín"
+date: "2023-09-28"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_section: false
+    code_download: true
+    theme: darkly
+    highlight: textmate
+---
+
+```{r, include=FALSE}
+library(rio)
+library(knitr)
+library(modelsummary)
+library(dplyr)
+library(arm)
+library(polycor)
+library(stargazer)
+library(ggcorrplot)
+library(cluster)
+library(factoextra)
+library(GPArotation)
+library(matrixcalc)
+library(psych)
+library(reshape)
+library(kableExtra)
+library(ggplot2)
+library(DT)
+library(cowplot)
+library(sf)
+library(lm.beta)
+library(ggthemes)
+library(ggThemeAssist)
+library(Rmisc)
+library(car)
+```
+
+
+# Descarga de la base de datos
+
+```{r}
+data=import("https://github.com/krlos20203563/prueba1/raw/main/datafinal.csv")
+```
+
+```{r}
+str(data)
+```
+
+```{r, echo=FALSE}
+head(data,15)%>%kbl()%>%kable_styling()
+```
+
+# Modelo de regresión poisson
+
+
+```{r,echo=FALSE}
+h1=formula(protestnumber~mensualsalary2019 + PBIpercapita2019 + caldemo2019)
+    
+rp1=glm(h1, data = data,
+        family = poisson(link = "log"))
+model1=list('OLS asegurados (I)'=rp1)
+modelsummary(model1, title = "Resumen de Regresion Lineal salario-PBI-Calidad democracia",
+             stars = TRUE,
+             output = "kableExtra")
+```
+
+

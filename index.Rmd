@@ -1,0 +1,42 @@
+---
+title: "Prueba de Header 1"
+author: "Carlos Crespín"
+date: "28-09-2023"
+subtitle: "Prueba del header básico"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    code_download: true
+    theme: darkly
+    highlight: textmate
+---
+
+# Elementos que contiene este html
+
+Este archivo contiene el archivo básico para la prueba de error. 
+Para corroborar ciertos elementos, se utilizarán algunos modelos del trabajo 
+siguiente: https://krlos20203563.github.io/Proyecto-Grupal-Estadistica-para-el-Analisis-Politico-2/
+
+# TOC
+
+Este apartado corroborará la existencia de las Table of Content. Sí, es puro
+floro
+
+# Contenido de otras pestañas
+
+  1. Floro
+  2. Modelos de regresión poisson, por floro, solo replicaré modelos
+  3. Subiré todo esto a un repositorio en Git-Hub para corroborar la hipótesis
+  4. Este punto contiene posibles temas con ese YALM
+"default", "bootstrap", "cerulean", "cosmo", "darkly", "flatly", "journal", 
+"lumen", "paper", "readable", "sandstone", "simplex", "spacelab", "united",
+"yeti"
+
+
+
+
+
